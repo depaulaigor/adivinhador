@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adivinhador</title>
+    <link rel="shortcut icon" href="images/favicon-32x32.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class ="container">
+        <h1 class="page-title">
+            Adivinhador
+        </h1>
+    </div>
+    
+    <style>
+
+        body {
+            font-family: 'Roboto Mono', monospace;
+            min-height: 600px;
+            background-image: url(images/Wallpaper\ You\ can\ 1.jpg);
+            background-position: center;
+            background-color: black;
+            background-size: cover;
+            background-position: center bottom;
+            
+        }
+
+        .container {
+            text-align: center;
+            padding: 20px;
+            height: 100vh;
+        }
+
+        .page-title {
+            color: #ffffff;
+            margin: 0 0 5px;
+        }
+
+        @media (max-height: 500px) {
+            body{
+                min-height: 800px;
+            }
+        }
+    </style>
+
+    <script>
+        var numeroSecreto = parseInt(Math.random() * 10)
+        var tentativas = 3
+
+        while (tentativas > 0) {
+            var chute = parseInt(prompt("Digite um número entre 0 e 10"))
+
+            if(numeroSecreto == chute) {
+                alert("Acertou!")
+                break
+            } else if (chute > numeroSecreto) {
+                alert("O número secreto é menor")
+                tentativas = tentivas - 1
+            } else if (chute < numeroSecreto) {
+                alert("O número secreto é maior")
+                tentativas = tentativas - 1
+            }
+        }
+        
+        if(chute != numeroSecreto) {
+            alert("Suas tentativas acabaram. O número secreto era " + numeroSecreto)
+        }
+    </script>
+
+</body>
+
+</html>
